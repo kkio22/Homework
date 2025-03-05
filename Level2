@@ -1,0 +1,40 @@
+package Level2;
+import java.util.Scanner;
+public class Level2 {
+    public static void main (String[] args) {
+        Calculator calculator = new Calculator();
+        Scanner sc = new Scanner(System.in);
+                String str2;
+                do {
+                    System.out.print("양의 정수를 입력하세요: ");
+                    int a = sc.nextInt();
+                    while (a < 0) {
+                        System.out.print("양의 정수를 입력하세요: ");
+                        a = sc.nextInt();
+                    }
+
+                    System.out.print("양의 정수를 입력하세요: ");
+                    int b = sc.nextInt();
+                    while (b < 0) {
+                        System.out.print("양의 정수를 입력하세요: ");
+                        b = sc.nextInt();
+                    }
+                    sc.nextLine();
+                    System.out.print("사칙연산 기호를 입력하세요: ");
+                    String str1 = sc.nextLine();
+                    char ch = str1.charAt(0);
+                    
+                    
+                    calculator.setValue1(a);
+                    calculator.setValue2(b);
+                    calculator.setOperator(ch);
+
+                    int result = calculator.result();
+                    System.out.print("result:" + result);
+                    sc.nextLine();
+                    System.out.print("더 계산하시겠습니까? (exit 입력 시 종료)");
+                    str2 = sc.nextLine();
+                }while (!str2.equals("exit"));
+
+            }
+        }
