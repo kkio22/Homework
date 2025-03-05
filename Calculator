@@ -1,0 +1,66 @@
+package Level2;
+
+public class Calculator {
+    //getter
+    private int value1;
+    private int value2;
+    private char operate;
+
+    public int getValue1() {
+        return this.value1;
+    }
+
+    public int getValue2() {
+        return this.value2;
+    }
+
+    public void setValue1(int value1) {
+        this.value1 = value1;
+    }
+
+    public void setValue2(int value2) {
+        this.value2 = value2;
+    }
+
+    public void setOperator(char operate) {
+        this.operate = operate;
+    }
+
+    public int result() {
+        switch (operate) {
+            case '+':
+                return sum();
+            case '-':
+                return min();
+            case '*':
+                return mul(); 
+            case '/':
+                return div();
+            default:
+                return 0;
+
+        }
+    }
+
+    private int sum() {
+        return value1 + value2;
+    }
+
+    private int min() {
+        return value1 - value2;
+    }
+
+    private int mul() {
+        int result3 = value1 * value2;
+        return result3;
+    }
+
+    private int div() {
+        if (value2 == 0) {
+            System.out.print("나눗셈에서 분모에는 0을 사용하면 안됩니다");
+            return 0;
+        }
+        return value1 / value2;
+
+    }
+}
