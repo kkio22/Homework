@@ -1,0 +1,31 @@
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+
+        MenuItem hamburger1 = new MenuItem("ShackBurger", 6.9, "토마토, 양상추, 쉑소스가 토핑된 치즈버거") ;
+        MenuItem hamburger2 = new MenuItem("SmokeShack", 8.9, " 베이컨, 체리 페퍼에 쉑소스가 토핑된 치킨버거 ");
+        MenuItem hamburger3 = new MenuItem("CheeseBurger", 6.9, " 포테이토 번과 비프패티, 치즈가 토핑된 비프버거");
+        MenuItem hamburger4 = new MenuItem("HamBurger", 5.4, " 비프패티를 기반으로 야채가 들어간 기본버거");
+
+        List<MenuItem> hamburgers = new ArrayList<>();
+
+        hamburgers.add(hamburger1);
+        hamburgers.add(hamburger2);
+        hamburgers.add(hamburger3);
+        hamburgers.add(hamburger4); // 햄버거 종류를 순서대로 넣어서 hamburgers로 줄 세움
+
+        Menu hamburger = new Menu(hamburgers);
+
+        MenuItem drink1 = new MenuItem("Cola", 3.0, "탄산이 들어간 검은 음료");
+        MenuItem drink2 = new MenuItem("Cider", 3.0, "탄산이 들어간 흰 음료");
+        MenuItem drink3 = new MenuItem("OrangeJuice", 2.5, "오렌지 맛이 나는 음료");
+
+        List<MenuItem>drinks = new ArrayList<>();
+
+        drinks.add(drink1);
+        drinks.add(drink1);
+        drinks.add(drink1); //음료 종류를 순서대로 넣어서 drinks로 줄 세움
+
+        Menu drink = new Menu(drinks);
