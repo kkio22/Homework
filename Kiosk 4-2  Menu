@@ -1,0 +1,17 @@
+import java.util.List;
+public class Menu {
+
+    List<MenuItem> category;
+
+
+
+
+    public Menu(List<MenuItem> category) {
+        this.category=category;
+    }
+
+
+
+
+
+}
