@@ -1,0 +1,43 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Kiosk {
+
+    List<MenuItem> menuitem;
+
+    public Kiosk(List<MenuItem> menuItems) {
+        this.menuitem = menuItems;
+
+    }
+
+    public void start() {
+        //int orderNumber=1 (조건문을 바꿈으로서 필요없어짐); //반복문 쓸 때 종견조건 orderNumber 값이랑 0이랑 비교해서 밑으로 내려가야하는데 앞에서 변수 선언 값이 없으니까 비교할게 없어서 에러가 뜨니까 아무값이 넣어주고 실행 시키면 어차피 밑에서 SCANNER때문에 값이 바뀌니까 상관없어짐
+        while (true) { //while(orderNumber!=0) 조건문 바꿈 if문 작성해서
+            for (int i = 0; i < menuitem.size(); i++) {
+                System.out.println(i + 1 + "." + menuitem.get(i).getMenu() + "|" + "w" + menuitem.get(i).getPrice() + "|" + menuitem.get(i).getDetail());
+            }
+            System.out.println("0.종료 | 종료");
+
+            System.out.print("주문하실 햄버거 번호를 입력하세요:");
+
+            Scanner scanner = new Scanner(System.in);
+            int orderNumber = scanner.nextInt();
+
+            if(orderNumber==0){
+                System.out.println("종료");
+                break;
+            }else {
+                try{ //예외처리를 하는데 여기서는 내가 입력한 숫자에 대응하는 값이 없기에 nullpontexception이다. 그래서 catch에 runtimeexception 사용
+                    System.out.println("선택한 메뉴:" + menuitem.get(orderNumber - 1).getMenu() + "|" + menuitem.get(orderNumber - 1).getPrice() + "|" + menuitem.get(orderNumber - 1).getDetail());
+                } catch (RuntimeException e) {
+                    System.out.println("다시 입력하세요");
+                }
+
+
+            }
+
+
+        }
+    }
+}
